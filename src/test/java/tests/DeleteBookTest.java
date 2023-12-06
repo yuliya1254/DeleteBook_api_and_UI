@@ -14,7 +14,7 @@ public class DeleteBookTest extends TestBase {
     @Test
     void DeleteBook() {
 
-        step("Авторизоваться в профиле");
+
         AuthResponse authResponse = Auth.authResponse(authRequest);
 
 
