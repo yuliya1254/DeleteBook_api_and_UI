@@ -1,6 +1,7 @@
 package tests;
 
 import api.Auth;
+import io.qameta.allure.Step;
 import models.AuthResponse;
 import models.PostBookRequest;
 import org.junit.jupiter.api.Test;
@@ -9,15 +10,16 @@ import static io.qameta.allure.Allure.step;
 import static tests.TestData.authRequest;
 import static tests.TestData.isbn;
 
-public class DeleteBookTest extends TestBase{
+public class DeleteBookTest extends TestBase {
     @Test
-    void DeleteBook(){
+    void DeleteBook() {
 
-        AuthResponse authResponse = auth.authResponse(authRequest);
+        step("Авторизоваться в профиле");
+        AuthResponse authResponse = Auth.authResponse(authRequest);
 
 
         step("Добавить книгу в профиль", () ->
-                book.addBook(authResponse, new PostBookRequest() , isbn));
+                book.addBook(authResponse, new PostBookRequest(), isbn));
 
 
         step("Удалить книгу из профиля", () ->

@@ -8,8 +8,8 @@ import java.util.List;
 public class PostBookResponse {
     List<Books> books;
 
-@Data
-    public static class Books{
+    @Data
+    public static class Books {
         String isbn;
     }
 }
